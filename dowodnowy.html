@@ -219,50 +219,52 @@
         <p>Dane dokumentu</p>
         <img src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/arrow-1.svg" alt="arrow" id="arrow">
     </a>
-    <section class="collapsible buto" id="lo" style="border-radius: 12px 12px 0px 0px;">
-        <p>Twoje dodatkowe dane</p>
-        <img src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/arrow-1.svg" alt="arrow" id="rotation" style="transform: rotate(-90deg);">
-    </section>
-    <div id="rogo">
-        <div class="content">
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Nazwisko rodowe</p>
-                <p class="main" id="userRodowe">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Płeć</p>
-                <p class="main" id="userPlec">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Nazwisko rodowe ojca</p>
-                <p class="main" id="dadSurname">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Nazwisko rodowe matki</p>
-                <p class="main" id="momSurname">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Miejsce urodzenia</p>
-                <p class="main" id="userLocation">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Adres zameldowania na pobyt stały</p>
-                <p class="main" id="userAdres">brak</p><br><p class="main" id="userPostcode">brak</p>
-            </section>
-            <p class="krecha"></p>
-            <section class="dana">
-                <p class="info">Data zameldowania na pobyt stały</p>
-                <p class="main" id="userdata_zameldowania">2020-09-09</p>
-            </section>
-        </div>
+   <section class="collapsible buto" id="lo" style="border-radius: 12px 12px 0px 0px;">
+    <p>Twoje dodatkowe dane</p>
+    <img src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/arrow-1.svg" alt="arrow" id="rotation" style="transform: rotate(-90deg);">
+</section>
+
+<div id="rogo">
+    <div class="content">
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Nazwisko rodowe</p>
+            <p class="main" id="userRodowe"></p>
+        </section>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Płeć</p>
+            <p class="main" id="userPlec"></p>
+        </section>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Nazwisko rodowe ojca</p>
+            <p class="main" id="dadSurname"></p>
+        </section>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Nazwisko rodowe matki</p>
+            <p class="main" id="momSurname"></p>
+        </section>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Miejsce urodzenia</p>
+            <p class="main" id="userLocation"></p>
+        </section>
+        <p class="krecha"></p>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Adres zameldowania na pobyt stały</p>
+            <p class="main" id="userAdres"></p><br><p class="main" id="userPostcode"></p>
+        </section>
+        <p class="krecha"></p>
+        <section class="dana">
+            <p class="info">Data zameldowania na pobyt stały</p>
+            <p class="main" id="userdata_zameldowania"></p>
+        </section>
     </div>
+</div>
+
   <a class="buto">
     <div>
         <p class="info">Ostatnia aktualizacja</p>
@@ -446,7 +448,6 @@
                     // Wyświetlamy datę w formacie DD.MM.YYYY
                     userDobElement.textContent = `${day}.${month}.${year}`;
                 }
-
             } else {
                 console.error("Brak danych użytkownika w localStorage.");
             }
@@ -471,6 +472,5 @@
         }
     };
 </script>
-
 
 </html>
