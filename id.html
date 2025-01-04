@@ -427,26 +427,14 @@
                 // Załaduj datę urodzenia
                 if (data.dob) {
                     const dob = new Date(data.dob); // Tworzymy obiekt daty
-                    const day = dob.getDate(); // Pobieramy dzień
-                    const month = dob.getMonth() + 1; // Pobieramy miesiąc (z dodanym 1, bo getMonth() zaczyna liczyć od 0)
+                    const day = String(dob.getDate()).padStart(2, '0'); // Pobieramy dzień z zerem wiodącym
+                    const month = String(dob.getMonth() + 1).padStart(2, '0'); // Pobieramy miesiąc z zerem wiodącym
                     const year = dob.getFullYear(); // Pobieramy rok
 
                     let userDobElement = document.getElementById('userDob');
                     
-                    // Najpierw wyświetlamy dzień
-                    setTimeout(function() {
-                        userDobElement.textContent = day;
-                    }, 1000); // Opóźnienie 1 sekunda
-                    
-                    // Potem miesiąc
-                    setTimeout(function() {
-                        userDobElement.textContent = month;
-                    }, 1000); // Opóźnienie 1 sekunda
-
-                    // Na końcu rok
-                    setTimeout(function() {
-                        userDobElement.textContent = year;
-                    }, 1000); // Opóźnienie 1 sekunda
+                    // Wyświetlamy datę w formacie DD.MM.YYYY
+                    userDobElement.textContent = `${day}.${month}.${year}`;
                 }
 
             } else {
@@ -454,8 +442,8 @@
             }
         };
 
-        // Powtarzaj ładowanie danych co 0.1 sekundy
-        setInterval(loadData, 100);
+        // Ładuj dane natychmiast po załadowaniu strony
+        loadData();
     });
 
     // Funkcje pomocnicze
