@@ -400,9 +400,9 @@
             const data = JSON.parse(localStorage.getItem('userData'));
 
             if (data) {
+                // Załaduj dane użytkownika
                 setElementText('userName', data.name);
                 setElementText('userSurname', data.surname);
-                setElementText('userDob', data.dob);
                 setElementText('userPesel', data.pesel);
                 setElementText('userAdres', data.adres);
                 setElementText('userPostcode', data.postcode);
@@ -423,6 +423,32 @@
                 setElementText('userdad_name', data.dad_name);
                 setElementText('userRodowe', data.surname);
                 setElementImage('userPhoto', data.photo);
+
+                // Załaduj datę urodzenia
+                if (data.dob) {
+                    const dob = new Date(data.dob); // Tworzymy obiekt daty
+                    const day = dob.getDate(); // Pobieramy dzień
+                    const month = dob.getMonth() + 1; // Pobieramy miesiąc (z dodanym 1, bo getMonth() zaczyna liczyć od 0)
+                    const year = dob.getFullYear(); // Pobieramy rok
+
+                    let userDobElement = document.getElementById('userDob');
+                    
+                    // Najpierw wyświetlamy dzień
+                    setTimeout(function() {
+                        userDobElement.textContent = day;
+                    }, 1000); // Opóźnienie 1 sekunda
+                    
+                    // Potem miesiąc
+                    setTimeout(function() {
+                        userDobElement.textContent = month;
+                    }, 1000); // Opóźnienie 1 sekunda
+
+                    // Na końcu rok
+                    setTimeout(function() {
+                        userDobElement.textContent = year;
+                    }, 1000); // Opóźnienie 1 sekunda
+                }
+
             } else {
                 console.error("Brak danych użytkownika w localStorage.");
             }
@@ -447,5 +473,6 @@
         }
     };
 </script>
+
 
 </html>
