@@ -3,91 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Danych Użytkownika</title>
+    <title>xOb Generator</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #FFD700;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #FFD700;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e6c200;
+        }
+    </style>
 </head>
 <body>
-    <h1>Generator Danych Użytkownika</h1>
+    <h1>xOb Generator</h1>
     <form id="dataForm">
         <label>
             Imię:
             <input type="text" id="name" required>
-        </label><br>
+        </label>
         <label>
             Nazwisko:
             <input type="text" id="surname" required>
-        </label><br>
+        </label>
         <label>
             Data urodzenia:
             <input type="date" id="dob" required>
-        </label><br>
+        </label>
         <label>
             PESEL:
             <input type="text" id="pesel" required>
-        </label><br>
+        </label>
         <label>
             Adres:
             <input type="text" id="adres">
-        </label><br>
+        </label>
         <label>
             Kod pocztowy:
             <input type="text" id="postcode">
-        </label><br>
+        </label>
         <label>
             Data zameldowania:
             <input type="date" id="data_zameldowania">
-        </label><br>
+        </label>
         <label>
             Ostatnia aktualizacja:
             <input type="date" id="last_update">
-        </label><br>
+        </label>
         <label>
             Seria dokumentu:
             <input type="text" id="series">
-        </label><br>
+        </label>
         <label>
             Data ważności:
             <input type="date" id="expire_date">
-        </label><br>
+        </label>
         <label>
             Data wydania:
             <input type="date" id="data_wydania">
-        </label><br>
+        </label>
         <label>
             Organ wydający:
             <input type="text" id="organ_wydajacy">
-        </label><br>
+        </label>
         <label>
             Płeć:
             <select id="plec">
                 <option value="Mężczyzna">Mężczyzna</option>
                 <option value="Kobieta">Kobieta</option>
             </select>
-        </label><br>
+        </label>
         <label>
             Miejsce urodzenia:
             <input type="text" id="birth_location">
-        </label><br>
+        </label>
         <label>
             Nazwisko ojca:
             <input type="text" id="dad_surname">
-        </label><br>
+        </label>
         <label>
             Imię ojca:
             <input type="text" id="dad_name">
-        </label><br>
+        </label>
         <label>
             Nazwisko matki:
             <input type="text" id="mom_surname">
-        </label><br>
+        </label>
         <label>
             Imię matki:
             <input type="text" id="mom_name">
-        </label><br>
+        </label>
         <label>
             Zdjęcie (URL):
             <input type="url" id="photo">
-        </label><br>
-        <button type="button" onclick="generateUserData()">Zapisz i przejdź dalej</button>
+        </label>
+        <button type="button" onclick="generateUserData()">Generuj</button>
     </form>
     <script>
         function generateUserData() {
@@ -113,8 +155,12 @@
                 photo: document.getElementById('photo').value,
             };
 
+            if (!data.name || !data.surname || !data.dob || !data.pesel) {
+                alert("Proszę wypełnić wszystkie wymagane pola (Imię, Nazwisko, Data urodzenia, PESEL). Nie można przejść dalej.");
+                return;
+            }
+
             localStorage.setItem('userData', JSON.stringify(data));
-            alert("Dane użytkownika zostały zapisane. Przekierowanie do strony ID...");
             window.location.href = 'id.html'; // Przekierowanie do pliku id.html
         }
     </script>
