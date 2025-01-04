@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Danych Użytkownika</title>
+</head>
+<body>
+    <h1>Generator Danych Użytkownika</h1>
+    <form id="dataForm">
+        <label>
+            Imię:
+            <input type="text" id="name" required>
+        </label><br>
+        <label>
+            Nazwisko:
+            <input type="text" id="surname" required>
+        </label><br>
+        <label>
+            Data urodzenia:
+            <input type="date" id="dob" required>
+        </label><br>
+        <label>
+            PESEL:
+            <input type="text" id="pesel" required>
+        </label><br>
+        <label>
+            Adres:
+            <input type="text" id="adres">
+        </label><br>
+        <label>
+            Kod pocztowy:
+            <input type="text" id="postcode">
+        </label><br>
+        <label>
+            Data zameldowania:
+            <input type="date" id="data_zameldowania">
+        </label><br>
+        <label>
+            Ostatnia aktualizacja:
+            <input type="date" id="last_update">
+        </label><br>
+        <label>
+            Seria dokumentu:
+            <input type="text" id="series">
+        </label><br>
+        <label>
+            Data ważności:
+            <input type="date" id="expire_date">
+        </label><br>
+        <label>
+            Data wydania:
+            <input type="date" id="data_wydania">
+        </label><br>
+        <label>
+            Organ wydający:
+            <input type="text" id="organ_wydajacy">
+        </label><br>
+        <label>
+            Płeć:
+            <select id="plec">
+                <option value="Mężczyzna">Mężczyzna</option>
+                <option value="Kobieta">Kobieta</option>
+            </select>
+        </label><br>
+        <label>
+            Miejsce urodzenia:
+            <input type="text" id="birth_location">
+        </label><br>
+        <label>
+            Nazwisko ojca:
+            <input type="text" id="dad_surname">
+        </label><br>
+        <label>
+            Imię ojca:
+            <input type="text" id="dad_name">
+        </label><br>
+        <label>
+            Nazwisko matki:
+            <input type="text" id="mom_surname">
+        </label><br>
+        <label>
+            Imię matki:
+            <input type="text" id="mom_name">
+        </label><br>
+        <label>
+            Zdjęcie (URL):
+            <input type="url" id="photo">
+        </label><br>
+        <button type="button" onclick="generateUserData()">Zapisz i przejdź dalej</button>
+    </form>
+    <script>
+        function generateUserData() {
+            const data = {
+                name: document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                dob: document.getElementById('dob').value,
+                pesel: document.getElementById('pesel').value,
+                adres: document.getElementById('adres').value,
+                postcode: document.getElementById('postcode').value,
+                data_zameldowania: document.getElementById('data_zameldowania').value,
+                last_update: document.getElementById('last_update').value,
+                series: document.getElementById('series').value,
+                expire_date: document.getElementById('expire_date').value,
+                data_wydania: document.getElementById('data_wydania').value,
+                organ_wydajacy: document.getElementById('organ_wydajacy').value,
+                plec: document.getElementById('plec').value,
+                birth_location: document.getElementById('birth_location').value,
+                dad_surname: document.getElementById('dad_surname').value,
+                dad_name: document.getElementById('dad_name').value,
+                mom_surname: document.getElementById('mom_surname').value,
+                mom_name: document.getElementById('mom_name').value,
+                photo: document.getElementById('photo').value,
+            };
+
+            localStorage.setItem('userData', JSON.stringify(data));
+            alert("Dane użytkownika zostały zapisane. Przekierowanie do strony ID...");
+            window.location.href = 'id.html'; // Przekierowanie do pliku id.html
+        }
+    </script>
+</body>
+</html>
