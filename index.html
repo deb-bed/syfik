@@ -111,7 +111,7 @@
             justify-content: center;
         }
 
-      .BottomNav_bottomNav__JQdpA {
+.BottomNav_bottomNav__JQdpA {
     width: 100%;
     height: 90px; /* Wysokość paska */
     position: fixed;
@@ -131,13 +131,14 @@
     display: flex;
     flex-direction: column; /* Elementy w pionie: obrazek nad tekstem */
     align-items: center; /* Wyśrodkowanie obrazka i tekstu */
-    justify-content: center; /* Wyśrodkowanie w pionie */
-    padding: 0; /* Brak wewnętrznego marginesu */
+    justify-content: flex-start; /* Obniżenie obrazka */
+    padding: 10px 0 0; /* Dodatkowy margines górny */
 }
 
 .BottomNav_bnTab__WzkWH img {
     height: 24px; /* Wysokość obrazków */
-    margin-bottom: 4px; /* Odstęp między obrazkiem a tekstem */
+    margin-bottom: 6px; /* Większy odstęp między obrazkiem a tekstem */
+    margin-top: 6px; /* Obniżenie obrazka poprzez dodanie odstępu od góry */
 }
 
 .BottomNav_bnTab__WzkWH span {
@@ -162,6 +163,7 @@
 .BottomNav_bnTab__WzkWH {
     -webkit-tap-highlight-color: transparent;
 }
+
 
         
     </style>
