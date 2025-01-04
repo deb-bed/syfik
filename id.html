@@ -268,13 +268,25 @@
             </section>
         </div>
     </div>
-    <a class="buto">
-        <div>
-            <p class="info">Ostatnia aktualizacja</p>
-            <p class="main" id="userlast_update">brak</p>
-        </div>
-        <button id="aktualizuj">Aktualizuj</button>
-    </a>
+  <a class="buto">
+    <div>
+        <p class="info">Ostatnia aktualizacja</p>
+        <p class="main" id="userlast_update">brak</p>
+    </div>
+    <button id="aktualizuj">Aktualizuj</button>
+</a>
+
+<style>
+    .buto {
+        display: block !important; /* Upewnia się, że element .buto jest zawsze widoczny */
+        visibility: visible !important; /* Upewnia się, że elementy wewnątrz są widoczne */
+    }
+
+    #userlast_update {
+        visibility: visible !important; /* Upewnia się, że ten element jest widoczny */
+    }
+</style>
+
     <script src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/rozwijka-1.js"></script>
     <section id="menu" style="display: none;">
         <section id="wybordokumentu" style="display: none;">
