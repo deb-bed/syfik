@@ -50,119 +50,120 @@
 <body>
     <h1>xOb Generator</h1>
     <form id="dataForm">
-        <label>
-            Imię:
-            <input type="text" id="name" required>
-        </label>
-        <label>
-            Nazwisko:
-            <input type="text" id="surname" required>
-        </label>
-        <label>
-            Data urodzenia:
-            <input type="date" id="dob" required>
-        </label>
-        <label>
-            PESEL:
-            <input type="text" id="pesel" required>
-        </label>
-        <label>
-            Adres:
-            <input type="text" id="adres">
-        </label>
-        <label>
-            Kod pocztowy:
-            <input type="text" id="postcode">
-        </label>
-        <label>
-            Data zameldowania:
-            <input type="date" id="data_zameldowania">
-        </label>
-        <label>
-            Ostatnia aktualizacja:
-            <input type="date" id="last_update">
-        </label>
-        <label>
-            Seria dokumentu:
-            <input type="text" id="series">
-        </label>
-        <label>
-            Data ważności:
-            <input type="date" id="expire_date">
-        </label>
-        <label>
-            Data wydania:
-            <input type="date" id="data_wydania">
-        </label>
-        <label>
-            Organ wydający:
-            <input type="text" id="organ_wydajacy">
-        </label>
-        <label>
-            Płeć:
-            <select id="plec">
-                <option value="Mężczyzna">Mężczyzna</option>
-                <option value="Kobieta">Kobieta</option>
-            </select>
-        </label>
-        <label>
-            Miejsce urodzenia:
-            <input type="text" id="birth_location">
-        </label>
-        <label>
-            Nazwisko ojca:
-            <input type="text" id="dad_surname">
-        </label>
-        <label>
-            Imię ojca:
-            <input type="text" id="dad_name">
-        </label>
-        <label>
-            Nazwisko matki:
-            <input type="text" id="mom_surname">
-        </label>
-        <label>
-            Imię matki:
-            <input type="text" id="mom_name">
-        </label>
-        <label>
-            Zdjęcie (URL):
-            <input type="url" id="photo">
-        </label>
-        <button type="button" onclick="generateUserData()">Generuj</button>
-    </form>
-    <script>
-        function generateUserData() {
-            const data = {
-                name: document.getElementById('name').value,
-                surname: document.getElementById('surname').value,
-                dob: document.getElementById('dob').value,
-                pesel: document.getElementById('pesel').value,
-                adres: document.getElementById('adres').value,
-                postcode: document.getElementById('postcode').value,
-                data_zameldowania: document.getElementById('data_zameldowania').value,
-                last_update: document.getElementById('last_update').value,
-                series: document.getElementById('series').value,
-                expire_date: document.getElementById('expire_date').value,
-                data_wydania: document.getElementById('data_wydania').value,
-                organ_wydajacy: document.getElementById('organ_wydajacy').value,
-                plec: document.getElementById('plec').value,
-                birth_location: document.getElementById('birth_location').value,
-                dad_surname: document.getElementById('dad_surname').value,
-                dad_name: document.getElementById('dad_name').value,
-                mom_surname: document.getElementById('mom_surname').value,
-                mom_name: document.getElementById('mom_name').value,
-                photo: document.getElementById('photo').value,
-            };
+       <label>
+    Imię:
+    <input type="text" id="userName">
+</label>
+<label>
+    Nazwisko:
+    <input type="text" id="userSurname">
+</label>
+<label>
+    Data urodzenia:
+    <input type="date" id="dob">
+</label>
+<label>
+    PESEL:
+    <input type="text" id="pesel">
+</label>
+<label>
+    Adres:
+    <input type="text" id="adres">
+</label>
+<label>
+    Kod pocztowy:
+    <input type="text" id="postcode">
+</label>
+<label>
+    Data zameldowania:
+    <input type="date" id="data_zameldowania">
+</label>
+<label>
+    Data ostatniej aktualizacji:
+    <input type="date" id="last_update">
+</label>
+<label>
+    Seria:
+    <input type="text" id="series">
+</label>
+<label>
+    Data ważności:
+    <input type="date" id="expire_date">
+</label>
+<label>
+    Data wydania:
+    <input type="date" id="data_wydania">
+</label>
+<label>
+    Organ wydający:
+    <input type="text" id="organ_wydajacy">
+</label>
+<label>
+    Płeć:
+    <select id="userPlec">
+        <option value="Mężczyzna">Mężczyzna</option>
+        <option value="Kobieta">Kobieta</option>
+    </select>
+</label>
+<label>
+    Miejsce urodzenia:
+    <input type="text" id="userLocation">
+</label>
+<label>
+    Nazwisko ojca:
+    <input type="text" id="dadSurname">
+</label>
+<label>
+    Imię ojca:
+    <input type="text" id="dadName">
+</label>
+<label>
+    Nazwisko matki:
+    <input type="text" id="momSurname">
+</label>
+<label>
+    Imię matki:
+    <input type="text" id="momName">
+</label>
+<label>
+    Zdjęcie (URL):
+    <input type="url" id="photo">
+</label>
+<button type="button" onclick="generateUserData()">Generuj</button>
 
-            if (!data.name || !data.surname || !data.dob || !data.pesel) {
-                alert("Proszę wypełnić wszystkie wymagane pola (Imię, Nazwisko, Data urodzenia, PESEL). Nie można przejść dalej.");
-                return;
-            }
+<script>
+    function generateUserData() {
+        const data = {
+            name: document.getElementById('userName').value,
+            surname: document.getElementById('userSurname').value,
+            dob: document.getElementById('dob').value,
+            pesel: document.getElementById('pesel').value,
+            adres: document.getElementById('adres').value,
+            postcode: document.getElementById('postcode').value,
+            data_zameldowania: document.getElementById('data_zameldowania').value,
+            last_update: document.getElementById('last_update').value,
+            series: document.getElementById('series').value,
+            expire_date: document.getElementById('expire_date').value,
+            data_wydania: document.getElementById('data_wydania').value,
+            organ_wydajacy: document.getElementById('organ_wydajacy').value,
+            plec: document.getElementById('userPlec').value,
+            birth_location: document.getElementById('userLocation').value,
+            dad_surname: document.getElementById('dadSurname').value,
+            dad_name: document.getElementById('dadName').value,
+            mom_surname: document.getElementById('momSurname').value,
+            mom_name: document.getElementById('momName').value,
+            photo: document.getElementById('photo').value,
+        };
 
-            localStorage.setItem('userData', JSON.stringify(data));
-            window.location.href = 'index2.html'; // Przekierowanie do pliku logowanie.html
+        if (!data.name || !data.surname || !data.dob || !data.pesel) {
+            alert("Proszę wypełnić wszystkie wymagane pola (Imię, Nazwisko, Data urodzenia, PESEL). Nie można przejść dalej.");
+            return;
         }
-    </script>
+
+        localStorage.setItem('userData', JSON.stringify(data));
+        window.location.href = 'index2.html'; // Przekierowanie do pliku logowanie.html
+    }
+</script>
+
 </body>
 </html>
