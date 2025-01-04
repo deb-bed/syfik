@@ -390,11 +390,34 @@
         </div>
 
 <style>
-    body {
-        overflow-y: scroll; /* Włącza przewijanie w pionie */
-        -webkit-overflow-scrolling: touch; /* Obsługuje płynne przewijanie na urządzeniach dotykowych */
-    }
+  /* Upewniamy się, że strona ma odpowiednią wysokość */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  /* Ustawienia dla kontenera strony */
+  body {
+    overflow: auto; /* Umożliwia przewijanie */
+    -webkit-overflow-scrolling: touch; /* Zapewnia płynne przewijanie na urządzeniach dotykowych */
+  }
+
+  /* Stylizacja paska przewijania (opcjonalna) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
 </style>
+
 
       
 </body>
